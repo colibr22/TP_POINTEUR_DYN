@@ -15,10 +15,6 @@ Note* creerNote(int frequence, int duree) {
     return nouvelleNote;
 }
 
-void jouerSon(int frequence, int duree) {
-    Beep(frequence, duree);
-}
-
 void simulerPiano(Note** notes, int nombreNotes) {
     char touches[] = {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', '\\'};
     while (1) {
@@ -29,7 +25,7 @@ void simulerPiano(Note** notes, int nombreNotes) {
             }
             for (int i = 0; i < nombreNotes; ++i) {
                 if (touche == touches[i]) {
-                    jouerSon(notes[i]->frequence, notes[i]->duree);
+                    Beep(notes[i]->frequence, notes[i]->duree);
                     printf("Note jouée: %d Hz\n", notes[i]->frequence);
                 }
             }
